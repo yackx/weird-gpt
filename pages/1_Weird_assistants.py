@@ -105,7 +105,7 @@ def select_assistant():
         model_radio = st.radio(
             "ChatGPT model",
             ["GPT 3.5 turbo", "GPT 4", "GPT 4o"],
-            captions=["Cheaper", "Avoid", "Better"],
+            captions=["Cheapest", "Still good", "Shiny new"],
             index=1,
             horizontal=True,
         )
