@@ -12,10 +12,6 @@ from _openai_st_blocks import openai_safe_st_block, openai_st_moderation
 DEFAULT_MODEL = "gpt-4o"
 DEFAULT_NB_TOKENS = 4000
 
-# Environment variables
-ENV_MODEL = "WEIRD_GPT_MODEL"
-ENV_NB_TOKENS = "WEIRD_GPT_NB_TOKENS"
-
 # st.session keys
 KEY_ASSISTANT = "assistant"
 KEY_CHATBOT = "chatbot"
@@ -27,13 +23,6 @@ KEY_PARAMS_INFO = "params_info"
 class Settings:
     model: str = DEFAULT_MODEL
     nb_tokens: int = DEFAULT_NB_TOKENS
-
-
-def load_settings() -> Settings:
-    return Settings(
-        model=os.getenv(ENV_MODEL, DEFAULT_MODEL),
-        nb_tokens=int(os.getenv(ENV_NB_TOKENS, DEFAULT_NB_TOKENS)),
-    )
 
 
 def find_assistant_by_name(name: str) -> Optional[Assistant]:
