@@ -106,7 +106,7 @@ def select_assistant():
             "ChatGPT model",
             ["GPT 3.5 turbo", "GPT 4", "GPT 4o"],
             captions=["Cheapest", "Still good", "Shiny new"],
-            index=1,
+            index=2,
             horizontal=True,
         )
         nb_tokens = st.number_input(
