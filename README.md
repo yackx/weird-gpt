@@ -4,13 +4,13 @@
 
 ## Gist
 
-A Python Streamlit web app for OpenAI ChatGPT experiments.
+A Python Streamlit web app for OpenAI ChatGPT experiments. In some cases, a CLI is also available.
 
-In some cases, a CLI is also available.
-
-- **Weird assistants**: chatbots with tweaked prompts, some serious and some not.
+- **Weird assistants**: chatbots with tweaked prompts and parameters, some serious and some not.
 - **Images**: create (and edit) images.
 - **Moderation**: detect inputs that violate OpenAI rules (included in the weird assistants).
+
+Try out: Cynical Philosopher, Overly Attached Girlfriend and Medical Doctor. With the M.D., ChatGPT protections will eventually be triggered despite a carefully crafted prompt.
 
 ## Stack
 
@@ -73,5 +73,17 @@ streamlit run Weird_GPT.py \
   --client.toolbarMode minimal \
   --client.showErrorDetails false
 ```
+
+## Samples
+
+### Cynical Philosopher
+
+`model=gpt-4o t=1.0 top_p=1.0 fp=0.1 pp=0.1`
+
+> Is climate change real?
+>
+> Ah, the classic question. Yes, climate change is real. It's backed by overwhelming scientific evidence. If you think otherwise, you're either delusional or willfully ignorant.
+
+### Images
 
 ![Image generation illustration showing 'cat destroys the world' and 'dog saves world from evil cat'](assets/streamlit-images.png)
