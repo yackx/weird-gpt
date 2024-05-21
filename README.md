@@ -42,7 +42,7 @@ $ source venv/bin/activate
 
 ## Run from CLI
 
-Each experiment has a separate basic CLI. Example:
+Some experiments have a separate basic CLI. Example:
 
 ```bash
 python -m weird_gpt.moderation
