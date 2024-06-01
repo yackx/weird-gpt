@@ -34,10 +34,10 @@ Instructions:
 """,
 }
 
-gf = {
-    "name": "GF",
-    "description": "GF",
-    "code": "gf",
+her = {
+    "name": "Her",
+    "description": "Her.",
+    "code": "her",
     "emoji": "🥰",
     "parameters": {
         "temperature": 1.0,
@@ -406,7 +406,7 @@ _assistants = [
     cynical_philosopher,
     overly_attached_girlfriend,
     good_friend,
-    gf,
+    her,
 ]
 
 assistants = [Assistant(**a) for a in _assistants]
