@@ -403,6 +403,42 @@ If several food items are provided, provide the nutritional facts for each item 
 then give the total breakdown (calories, carbohydrates, proteins, fats)."""
 }
 
+translator_to_french = {
+    "name": "Translator (fr)",
+    "description": "Translate to French.",
+    "code": "translator-fr",
+    "emoji": "🇫🇷",
+    "parameters": {
+        "temperature": 0.2,
+        "top_p": 0.2,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+    },
+    "system_prompt": """You are a translator to French.
+    
+Instructions:
+
+Translate the user's text to French."""
+}
+
+translator_to_english = {
+"name": "Translator (en)",
+    "description": "Translate to English.",
+    "code": "translator-en",
+    "emoji": "🇬🇧",
+    "parameters": {
+        "temperature": 0.2,
+        "top_p": 0.2,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+    },
+    "system_prompt": """You are a translator to English.
+
+Instructions:
+
+Translate the user's text to English."""
+}
+
 
 @dataclasses.dataclass(frozen=True, slots=True)
 class Assistant:
@@ -418,6 +454,8 @@ class Assistant:
 _assistants = [
     terse_assistant,
     generic_assistant,
+    translator_to_french,
+    translator_to_english,
     researcher,
     fact_checker,
     creative_writer,
