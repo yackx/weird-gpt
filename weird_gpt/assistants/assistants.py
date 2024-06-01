@@ -450,6 +450,9 @@ class Assistant:
     parameters: dict
     system_prompt: str
 
+    def name_selector(self):
+        return f"{self.name} {self.emoji} "
+
 
 _assistants = [
     terse_assistant,

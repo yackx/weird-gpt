@@ -25,9 +25,9 @@ class Settings:
     nb_tokens: int = DEFAULT_NB_TOKENS
 
 
-def find_assistant_by_name(name: str) -> Optional[Assistant]:
+def find_assistant_by_name_selector(name_selector: str) -> Optional[Assistant]:
     try:
-        return next(a for a in assistants if a.name == name)
+        return next(a for a in assistants if a.name_selector() == name_selector)
     except StopIteration:
         return None
 
@@ -86,10 +86,10 @@ def select_assistant():
 
     st.title("💬 Weird Assistants")
     names = ["-"]  # default selection
-    names.extend([a.name for a in assistants])
+    names.extend([a.name_selector() for a in assistants])
     name = st.selectbox("Choose your assistant", names)
 
-    if assistant := find_assistant_by_name(name):
+    if assistant := find_assistant_by_name_selector(name):
         st.info(assistant.description)
         model_radio = st.radio(
             "ChatGPT model",
