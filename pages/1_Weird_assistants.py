@@ -72,7 +72,9 @@ def chat():
                     st.write(response)
                     if dropped_count > 0:
                         st.write(f"Dropped {dropped_count} messages")
-                    st.button("Delete", on_click=on_delete_last_message)
+
+    if len(chatbot.get_messages()) > 1:
+        st.button("Delete", on_click=on_delete_last_message)
 
 
 def select_assistant():
