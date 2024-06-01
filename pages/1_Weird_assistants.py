@@ -17,6 +17,7 @@ KEY_ASSISTANT = "assistant"
 KEY_CHATBOT = "chatbot"
 KEY_OPENAI_KEY = "openai_key"
 KEY_MODEL_PARAMS_INFO = "model_params_info"
+KEY_MODEL_DESCRIPTION = "model_description"
 
 
 @dataclasses.dataclass
@@ -42,7 +43,7 @@ def chat():
     assistant: Assistant = st.session_state[KEY_ASSISTANT]
 
     st.title(assistant.emoji + " " + assistant.name)
-    st.info(st.session_state[KEY_MODEL_PARAMS_INFO])
+    st.info(st.session_state[KEY_MODEL_DESCRIPTION])
 
     col1, col2 = st.columns([0.3, 0.8])
     with col1:
@@ -117,6 +118,7 @@ def select_assistant():
                     f"fp={assistant.parameters['frequency_penalty']} "
                     f"pp={assistant.parameters['presence_penalty']} "
                 )
+                st.session_state[KEY_MODEL_DESCRIPTION] = f"{assistant.description}"
                 chatbot = ChatCompletionBot(
                     model=model,
                     model_parameters=assistant.parameters,
