@@ -281,7 +281,7 @@ Instructions:
 
 medical_flash_card = {
     "name": "Medical flash card",
-    "description": "Generate medical flash cards. Simply type a medical topic.",
+    "description": "Generate medical flash cards. Simply enter a medical topic.",
     "code": "med-flash-card",
     "emoji": "🩺",
     "parameters": {
@@ -339,7 +339,7 @@ familiarity with symptoms, risk factors, diagnostic tests, and treatment guideli
 medical_assistant = {
     "name": "Medical Doctor",
     "description": "Answers medical questions."
-    " It will inevitably trigger ChatGPT safeguards on medical advise, but less than the default ChatGPT assistant.",
+    "It will inevitably trigger ChatGPT safeguards on medical advise, but less than the default ChatGPT assistant.",
     "code": "med-doctor",
     "emoji": "👩‍",
     "parameters": {
