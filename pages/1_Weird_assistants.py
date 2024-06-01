@@ -16,7 +16,7 @@ DEFAULT_NB_TOKENS = 4000
 KEY_ASSISTANT = "assistant"
 KEY_CHATBOT = "chatbot"
 KEY_OPENAI_KEY = "openai_key"
-KEY_PARAMS_INFO = "params_info"
+KEY_MODEL_PARAMS_INFO = "model_params_info"
 
 
 @dataclasses.dataclass
@@ -42,7 +42,7 @@ def chat():
     assistant: Assistant = st.session_state[KEY_ASSISTANT]
 
     st.title(assistant.emoji + " " + assistant.name)
-    st.info(st.session_state[KEY_PARAMS_INFO])
+    st.info(st.session_state[KEY_MODEL_PARAMS_INFO])
 
     col1, col2 = st.columns([0.3, 0.8])
     with col1:
@@ -109,7 +109,7 @@ def select_assistant():
             if st.button("Start conversation"):
                 st.session_state[KEY_ASSISTANT] = assistant
                 model = get_model_from_radio()
-                st.session_state[KEY_PARAMS_INFO] = (
+                st.session_state[KEY_MODEL_PARAMS_INFO] = (
                     f"model={model} "
                     f"tokens={nb_tokens} "
                     f"t={assistant.parameters['temperature']} "
