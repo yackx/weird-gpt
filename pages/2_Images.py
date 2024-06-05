@@ -9,6 +9,8 @@ from weird_gpt.password import ask_password
 
 
 KEY_CONVERSATION = "conversation"
+KEY_LAST_MESSAGE = "last_message"
+KEY_GENERATE_AGAIN = "generate_again"
 
 client = openai.OpenAI(
     # defaults to os.environ.get("OPENAI_API_KEY")
@@ -26,10 +28,17 @@ class Message:
 def start_conversation():
     if KEY_CONVERSATION not in st.session_state:
         st.session_state[KEY_CONVERSATION] = []
+    if KEY_GENERATE_AGAIN not in st.session_state:
+        st.session_state[KEY_GENERATE_AGAIN] = False
 
 
 def on_reset_conversation():
     del st.session_state[KEY_CONVERSATION]
+
+
+def on_generate_again():
+    st.session_state[KEY_GENERATE_AGAIN] = True
+    st.rerun()
 
 
 def converse():
@@ -83,11 +92,12 @@ def converse():
 
     show_conversation()
 
-    if st.button("Reset"):
-        on_reset_conversation()
-        st.rerun()
+    if st.session_state[KEY_GENERATE_AGAIN]:
+        st.session_state[KEY_GENERATE_AGAIN] = False
+        prompt = st.session_state[KEY_CONVERSATION][-1].user_prompt
+    else:
+        prompt = st.chat_input("Describe an image")
 
-    prompt = st.chat_input("Describe an image")
     if prompt:
         with st.chat_message("User"):
             st.write(prompt)
@@ -115,6 +125,17 @@ def converse():
                             image_url=url,
                         )
                     )
+
+    col1, col2 = st.columns([0.1, 0.8])
+    if len(st.session_state[KEY_CONVERSATION]) > 0:
+        with col2:
+            if st.button("Generate again"):
+                on_generate_again()
+                st.rerun()
+    with col1:
+        if st.button("Reset"):
+            on_reset_conversation()
+            st.rerun()
 
 
 ask_password()
