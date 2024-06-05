@@ -422,7 +422,7 @@ Translate the user's text to French."""
 }
 
 translator_to_english = {
-"name": "Translator (en)",
+    "name": "Translator (en)",
     "description": "Translate to English.",
     "code": "translator-en",
     "emoji": "🇬🇧",
