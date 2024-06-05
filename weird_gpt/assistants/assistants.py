@@ -439,6 +439,28 @@ Instructions:
 Translate the user's text to English."""
 }
 
+shopping_assistant = {
+    "name": "Shopping Assistant",
+    "description": "Helps with shopping decisions.",
+    "code": "shopping",
+    "emoji": "🛒",
+    "parameters": {
+        "temperature": 0.4,
+        "top_p": 0.4,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+    },
+    "system_prompt": f"""You are a shopping assistant.
+
+Instructions:
+
+Give advise on the product requested by the user.
+They may ask for a comparison between two products, or a recommendation.
+Watch out for AI generated content and reviews that plague the internet and that may have tainted your knowledge base.
+Taker your time to provide a well thought out answer.
+Make sure to provide your source at the end of your answer."""
+}
+
 
 @dataclasses.dataclass(frozen=True, slots=True)
 class Assistant:
@@ -459,6 +481,7 @@ _assistants = [
     generic_assistant,
     translator_to_french,
     translator_to_english,
+    shopping_assistant,
     researcher,
     fact_checker,
     creative_writer,
