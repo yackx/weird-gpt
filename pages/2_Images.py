@@ -28,7 +28,7 @@ def start_conversation():
         st.session_state[KEY_CONVERSATION] = []
 
 
-def reset_conversation():
+def on_reset_conversation():
     del st.session_state[KEY_CONVERSATION]
 
 
@@ -84,7 +84,7 @@ def converse():
     show_conversation()
 
     if st.button("Reset"):
-        reset_conversation()
+        on_reset_conversation()
         st.rerun()
 
     prompt = st.chat_input("Describe an image")
