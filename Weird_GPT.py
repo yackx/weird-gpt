@@ -16,6 +16,9 @@ except ValueError:
 
 st.title("💬 Weird GPT")
 st.subheader("Tweaked OpenAI ChatGPT assistants")
+st.markdown(
+    "A collection of chatbots, some serious, some weird. And Dall-e to generate images from text."
+)
 st.info("Even tweaked, the chatbots may still hallucinate.")
 
 images = [
