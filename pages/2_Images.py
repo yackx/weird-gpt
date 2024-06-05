@@ -53,6 +53,10 @@ def converse():
 
     st.title("🎨 Images")
     st.info("Generate images from text with OpenAI.")
+    st.warning(
+        "Images are relatively expensive to generate and this page can become quickly addictive, "
+        "and therefore costly to the site owner."
+    )
 
     with st.container(border=True):
         quality_radio = st.radio(
