@@ -16,7 +16,7 @@ Try out: Cynical Philosopher, Overly Attached Girlfriend and Medical Doctor. Wit
 
 - **Python 3.12**
 - **[OpenAI ChatGPT](https://platform.openai.com)**
-- **[streamlit](https://streamlit.io/)** (web app for weird assistants and images)
+- **[streamlit](https://streamlit.io/)**
 
 ## Project structure
 
