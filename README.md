@@ -1,6 +1,6 @@
 # weird-gpt
 
-**Experiments with OpenAI ChatGPT**
+**Serious and fun chatbots with OpenAI ChatGPT**
 
 ## Gist
 
