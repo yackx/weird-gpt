@@ -476,6 +476,7 @@ class Assistant:
         return f"{self.name} {self.emoji} "
 
 
+# Not all assistants are visible in the selection screen.
 _assistants = [
     terse_assistant,
     generic_assistant,
