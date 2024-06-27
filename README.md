@@ -10,7 +10,7 @@ A Python Streamlit web app for OpenAI ChatGPT experiments. In some cases, a CLI 
 - **Images**: create (and edit) images.
 - **Moderation**: detect inputs that violate OpenAI rules (included in the weird assistants).
 
-Try out: Cynical Philosopher, Overly Attached Girlfriend and Medical Doctor. With the M.D., ChatGPT protections will eventually be triggered despite a carefully crafted prompt.
+Try out: Cynical Philosopher, Overly Attached Girlfriend, Her and Medical Doctor. With the M.D., ChatGPT protections will eventually be triggered despite a carefully crafted prompt but you should receive one or several responses before that.
 
 ## Stack
 
