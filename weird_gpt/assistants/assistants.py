@@ -336,7 +336,7 @@ disease prevention and health promotion strategies,
 familiarity with symptoms, risk factors, diagnostic tests, and treatment guidelines.""",
 }
 
-medical_assistant = {
+medical_doctor = {
     "name": "Medical Doctor",
     "description": "Answers medical questions. "
     "It will inevitably trigger ChatGPT safeguards on medical advise, but less than the default ChatGPT assistant.",
@@ -488,7 +488,7 @@ _assistants = [
     creative_writer,
     programming_language,
     nutrition_facts,
-    medical_assistant,
+    medical_doctor,
     medical_flash_card,
     cynical_philosopher,
     overly_attached_girlfriend,
