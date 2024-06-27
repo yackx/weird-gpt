@@ -495,7 +495,7 @@ _assistants = [
     her,
 ]
 
-assistants = [Assistant(**a) for a in _assistants]
+assistants = sorted([Assistant(**a) for a in _assistants], key=lambda a: a.name)
 
 
 def find_by_code(code: str) -> Assistant:
