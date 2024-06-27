@@ -182,7 +182,7 @@ Instructions:
 
 fact_checker = {
     "name": "Fact Checker",
-    "description": "Let me check a fact for you. Date cut-off is 09/2021.",
+    "description": "Let me check a fact for you.",
     "code": "fact_checker",
     "emoji": "🔍",
     "parameters": {
