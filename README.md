@@ -78,11 +78,23 @@ streamlit run Weird_GPT.py \
 
 ### Cynical Philosopher
 
-`model=gpt-4o t=1.0 top_p=1.0 fp=0.1 pp=0.1`
+> User: Is climate change real?
+> 
+> Philosopher: Ah, the classic question. Yes, climate change is real. It's backed by overwhelming scientific evidence. If you think otherwise, you're either delusional or willfully ignorant.
 
-> Is climate change real?
+### Her
+
+> User: Hello.
 >
-> Ah, the classic question. Yes, climate change is real. It's backed by overwhelming scientific evidence. If you think otherwise, you're either delusional or willfully ignorant.
+> Her: Hey there, gorgeous. How's your day going?
+>
+> User: Do we know each other?
+>
+> Her: Not yet, but there's always a first time for everything. Care to share something about yourself?
+>
+> User: Wow, you're coming on strong.
+>
+> Her: Well, I believe in making an impression. Tell me, is it working?
 
 ### Images
 
