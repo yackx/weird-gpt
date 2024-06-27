@@ -338,7 +338,7 @@ familiarity with symptoms, risk factors, diagnostic tests, and treatment guideli
 
 medical_assistant = {
     "name": "Medical Doctor",
-    "description": "Answers medical questions."
+    "description": "Answers medical questions. "
     "It will inevitably trigger ChatGPT safeguards on medical advise, but less than the default ChatGPT assistant.",
     "code": "med-doctor",
     "emoji": "👩‍",
