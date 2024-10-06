@@ -1,13 +1,12 @@
 import dataclasses
-import os
 from typing import Optional
 
 import streamlit as st
 
+from _openai_st_blocks import openai_safe_st_block, openai_st_moderation
 from weird_gpt.assistants import Assistant, ChatCompletionBot, assistants
 from weird_gpt.load_keys import check_openai_api_key_set
 from weird_gpt.password import ask_password
-from _openai_st_blocks import openai_safe_st_block, openai_st_moderation
 
 DEFAULT_MODEL = "gpt-4o"
 DEFAULT_NB_TOKENS = 4000
