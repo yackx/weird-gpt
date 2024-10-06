@@ -79,14 +79,13 @@ def chat():
 
 def select_assistant():
     def get_model_from_radio():
-        match model_radio:
-            case "GPT 3.5 turbo":
-                return "gpt-3.5-turbo"
-            case "GPT 4":
-                return "gpt-4"
-            case "GPT 4o":
-                return "gpt-4o"
+        return next(m[1] for m in models if m[0] == model_radio)
 
+    models = [
+        ("GPT 4o", "chatgpt-4o-latest", "Flagship"),
+        ("GPT 4o mini", "gpt-4o-mini", "Affordable for lightweight tasks"),
+        ("GPT 3.5 turbo", "gpt-3.5-turbo", "Fast, inexpensive for simple tasks"),
+    ]
     st.title("💬 Weird Assistants")
     names = ["-"]  # default selection
     names.extend([a.name_selector() for a in assistants])
@@ -96,9 +95,9 @@ def select_assistant():
         st.info(assistant.description)
         model_radio = st.radio(
             "ChatGPT model",
-            ["GPT 3.5 turbo", "GPT 4", "GPT 4o"],
-            captions=["Cheapest", "Still good", "Shiny new"],
-            index=2,
+            [m[0] for m in models],
+            captions=[m[2] for m in models],
+            index=0,
             horizontal=True,
         )
         nb_tokens = st.number_input(
