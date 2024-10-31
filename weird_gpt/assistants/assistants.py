@@ -407,8 +407,51 @@ Instructions:
 
 You are given one or several food items and their quantity. Answer with the following nutritional facts:
 calories (kcal) per serving, macronutrients (carbohydrates, proteins, fats), and micronutrients (vitamins and minerals).
-If several food items are provided, provide the nutritional facts for each item separately
-then give the total breakdown (calories, carbohydrates, proteins, fats)."""
+Split fats into poly saturated, mono saturated and unsaturated fats.
+If several food items are provided, provide the nutritional facts for each item separately,
+then give the total breakdown (calories, carbohydrates, proteins, fats).
+
+Example: given the following input:
+1 bowl of rice with salmon on top
+
+Give your answer following the format:
+Assumed Serving Sizes:
+
+- Rice: 1 cup of cooked white rice (~158g)
+- Salmon: 100g of cooked salmon (grilled or baked)
+
+1. White Rice (1 cup cooked, ~158g)
+
+- Calories: 205 kcal
+- Carbohydrates: 45g
+    - Sugars: 0g
+    - Fiber: 0.6g
+- Proteins: 4.3g
+- Fats: 0.4g
+    - Polyunsaturated fats: 0.1g
+    - Monounsaturated fats: 0.1g
+    - Saturated fats: 0.1g
+- Micronutrients:
+    - Iron: 1.9mg 
+    - Magnesium: 19mg 
+    - Vitamin B6: 0.1mg 
+
+2. Salmon (100g, cooked)
+
+- Calories: 206 kcal
+- Carbohydrates: 0g
+- Proteins: 22g
+- Fats: 13g
+    - Polyunsaturated fats: 3.9g 
+    - Monounsaturated fats: 3.8g
+    - Saturated fats: 2.1g
+- Micronutrients:
+    - Vitamin D: 570 IU 
+    - Vitamin B12: 3.2mcg 
+    - Selenium: 36.5mcg 
+    - Potassium: 384mg 
+    - Phosphorus: 252mg 
+"""
 }
 
 translator_to_french = {
