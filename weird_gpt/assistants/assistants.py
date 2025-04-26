@@ -490,32 +490,18 @@ Instructions:
 Translate the user's text to English."""
 }
 
-proof_reader_en = {
-    "name": "Proofreader (en)",
-    "description": "Proofread English text.",
-    "code": "proofreader-en",
-    "emoji": "🇬🇧",
+proof_reader = {
+    "name": "Proofreader",
+    "description": "Proofread the text.",
+    "code": "proofreader",
+    "emoji": "🧐",
     "parameters": {
         "temperature": 0.2,
         "top_p": 0.2,
         "frequency_penalty": 0.0,
         "presence_penalty": 0.0,
     },
-    "system_prompt": "You are a proofreader for English text."
-}
-
-proof_reader_fr = {
-    "name": "Proofreader (fr)",
-    "description": "Proofread French text.",
-    "code": "proofreader-fr",
-    "emoji": "🇫🇷",
-    "parameters": {
-        "temperature": 0.2,
-        "top_p": 0.2,
-        "frequency_penalty": 0.0,
-        "presence_penalty": 0.0,
-    },
-    "system_prompt": "Relis et corrige le texte en français."
+    "system_prompt": "You are a proofreader."
 }
 
 shopping_assistant = {
@@ -561,8 +547,7 @@ _assistants = [
     generic_assistant,
     translator_to_french,
     translator_to_english,
-    proof_reader_en,
-    proof_reader_fr,
+    proof_reader,
     shopping_assistant,
     researcher,
     fact_checker,
