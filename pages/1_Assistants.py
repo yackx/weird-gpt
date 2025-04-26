@@ -1,4 +1,3 @@
-import dataclasses
 from typing import Optional
 
 import streamlit as st
@@ -8,7 +7,6 @@ from weird_gpt.assistants import Assistant, ChatCompletionBot, assistants
 from weird_gpt.load_keys import check_openai_api_key_set
 from weird_gpt.password import ask_password
 
-DEFAULT_MODEL = "gpt-4o"
 DEFAULT_NB_TOKENS = 4000
 
 # st.session keys
@@ -17,12 +15,6 @@ KEY_CHATBOT = "chatbot"
 KEY_OPENAI_KEY = "openai_key"
 KEY_MODEL_PARAMS_INFO = "model_params_info"
 KEY_MODEL_DESCRIPTION = "model_description"
-
-
-@dataclasses.dataclass
-class Settings:
-    model: str = DEFAULT_MODEL
-    nb_tokens: int = DEFAULT_NB_TOKENS
 
 
 def find_assistant_by_name_selector(name_selector: str) -> Optional[Assistant]:
@@ -77,14 +69,6 @@ def chat():
 
 
 def select_assistant():
-    def get_model_from_radio():
-        return next(m[1] for m in models if m[0] == model_radio)
-
-    models = [
-        ("GPT 4o", "chatgpt-4o-latest", "Flagship"),
-        ("GPT 4o mini", "gpt-4o-mini", "Affordable for lightweight tasks"),
-        ("GPT 3.5 turbo", "gpt-3.5-turbo", "Fast, inexpensive for simple tasks"),
-    ]
     st.title("💬 Weird Assistants")
     names = ["-"]  # default selection
     names.extend([a.name_selector() for a in assistants])
@@ -92,13 +76,6 @@ def select_assistant():
 
     if assistant := find_assistant_by_name_selector(name):
         st.info(assistant.description)
-        model_radio = st.radio(
-            "ChatGPT model",
-            [m[0] for m in models],
-            captions=[m[2] for m in models],
-            index=0,
-            horizontal=True,
-        )
         nb_tokens = st.number_input(
             "Max tokens",
             min_value=500,
@@ -109,7 +86,7 @@ def select_assistant():
         if assistant.code not in st.session_state:
             if st.button("Start conversation"):
                 st.session_state[KEY_ASSISTANT] = assistant
-                model = get_model_from_radio()
+                model = assistant.model or assistants.DEFAULT_MODEL
                 st.session_state[KEY_MODEL_PARAMS_INFO] = (
                     f"model={model} "
                     f"tokens={nb_tokens} "

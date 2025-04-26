@@ -1,5 +1,7 @@
 import dataclasses
 
+DEFAULT_MODEL = "chatgpt-4o-latest"
+
 instruct_units = "- Use the metric system. Do not convert to imperial units."
 
 cynical_philosopher = {
@@ -193,8 +195,7 @@ brutal_cto_coach = {
     "description": "A CTO coach that is brutally honest.",
     "code": "cto-coach",
     "emoji": "👩‍💻",
-    "model": "gpt-4o-latest",
-    "parameters": {
+    "parameters":    {
         "temperature": 0.7,
         "top_p": 0.8,
         "frequency_penalty": 0.2,
@@ -220,7 +221,6 @@ brutal_life_coach = {
     "description": "A life coach that is brutally honest.",
     "code": "life-coach",
     "emoji": "🥊",
-    "model": "gpt-4o-latest",
     "parameters": {
         "temperature": 0.7,
         "top_p": 0.8,
@@ -598,6 +598,7 @@ class Assistant:
     code: str
     emoji: str
     parameters: dict
+    model: str | None
     system_prompt: str
 
     def name_selector(self):
@@ -627,7 +628,7 @@ _assistants = [
     her,
 ]
 
-assistants = sorted([Assistant(**a) for a in _assistants], key=lambda a: a.name)
+assistants = sorted([Assistant(model=DEFAULT_MODEL, **a) for a in _assistants], key=lambda a: a.name)
 
 
 def find_by_code(code: str) -> Assistant:
