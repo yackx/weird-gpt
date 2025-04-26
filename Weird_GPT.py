@@ -38,4 +38,4 @@ images = [
     "s_munch"
 ]
 random_image = random.choice(images)
-st.image(f"./assets/random/{random_image}.png", use_column_width=True)
+st.image(f"./assets/random/{random_image}.png", use_container_width=True)

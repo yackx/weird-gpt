@@ -52,7 +52,7 @@ def converse():
                 )
 
     def show_response(*, image_url: str, suggested_prompt: str):
-        st.image(image_url, use_column_width=True)
+        st.image(image_url, use_container_width=True)
         st.write(f"[link]({image_url})")
         with st.expander("Revised prompt"):
             st.write(f"*{suggested_prompt}*")
